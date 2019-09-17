@@ -3,6 +3,7 @@
 ### Varibales
 DOTFILES="configs/dotfiles"
 VSCODE="configs/vscode"
+KEYCHAINS="configs/keychains"
 
 # Check for existing configs
 if [[ ! -d configs ]]; then
@@ -11,18 +12,18 @@ if [[ ! -d configs ]]; then
 fi
 
 ### Restore dotfiles
-echo "Restoring up zsh"
+echo "Restoring zsh"
 cp $DOTFILES/.zsh_history ~/
 cp $DOTFILES/.zshrc ~/
-echo "Restoring up gitconfig"
+echo "Restoring gitconfig"
 cp $DOTFILES/.gitconfig ~/
 cp $DOTFILES/.gitignore_global ~/
-echo "Restoring up hyper.js"
+echo "Restoring hyper.js"
 cp $DOTFILES/.hyper.js ~/
-echo "Restoring up ssh"
+echo "Restoring ssh"
 cp -rf $DOTFILES/.ssh ~/
-
-
+echo "Restoring Keychains"
+cp -rf $KEYCHAINS/ ~/Library/Keychains/
 
 ### Restore VSCode user data and extensions list
 echo "Restoring VSCode user data"

@@ -3,6 +3,7 @@
 ### Varibales
 DOTFILES="configs/dotfiles"
 VSCODE="configs/vscode"
+KEYCHAINS="configs/keychains"
 
 ### Cleanup previous backups
 rm -rf configs
@@ -10,6 +11,7 @@ rm -rf configs
 ### Create folders
 mkdir configs
 mkdir configs/dotfiles
+mkdir configs/keychains
 mkdir configs/vscode
 
 ### Backup dotfiles
@@ -23,6 +25,8 @@ echo "Backing up hyper.js"
 cp ~/.hyper.js $DOTFILES/
 echo "Backing up ssh"
 cp -rf ~/.ssh $DOTFILES/
+echo "Backing up Keychains"
+cp -rf ~/Library/Keychains/* $KEYCHAINS/
 
 ### Backup VSCode user data and extensions list
 echo "Backing up VSCode user data"
